@@ -20,7 +20,7 @@
     background-color: red;
     margin-right: 5px;
 
-    &[data-selected="true"] {
+    &.current {
       background-color: green;
     }
   }

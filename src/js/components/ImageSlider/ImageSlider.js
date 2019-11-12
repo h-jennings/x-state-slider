@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import { Machine, assign } from 'xstate';
 import { useMachine } from '@xstate/react';
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Slide from '../Slide';
 import Button from '../Button';
 import './ImageSlider.scss';
@@ -23,21 +22,28 @@ for (let index = 0; index < imageCount; index += 1) {
 
 const MotionSlide = motion.custom(Slide);
 
+const spring = {
+  type: 'spring',
+  damping: 100,
+  stiffness: 300,
+};
+
 const slideVariants = {
-  hidden: {
-    opacity: 0,
-  },
   past: {
     x: '-200%',
+    transition: spring,
   },
   current: {
     x: '0%',
+    transition: spring,
   },
   next: {
     x: '110%',
+    transition: spring,
   },
   future: {
     x: '200%',
+    transition: spring,
   },
 };
 
@@ -74,7 +80,6 @@ const imageSliderMachine = new Machine({
   initial: 'idle',
   context: {
     index: 0,
-    slides: [],
   },
   states: {
     idle: {
@@ -100,7 +105,6 @@ const imageSliderMachine = new Machine({
 const ImageSlider = () => {
   const [current, send] = useMachine(imageSliderMachine);
 
-
   return (
     <div className="c-ImageSlider">
       <header>
@@ -124,10 +128,10 @@ const ImageSlider = () => {
         ))}
       </div>
       <div className="slideIndicator--container">
-        {imageArr.map(({ id }) => (
+        {imageArr.map(({ id }, index) => (
           <div
             key={id}
-            className="slide-indicator"
+            className={`slide-indicator ${current.context.index === index ? 'current' : ''}`}
           />
         ))}
       </div>
