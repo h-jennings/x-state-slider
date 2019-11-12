@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Machine, assign } from 'xstate';
 import { useMachine } from '@xstate/react';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import Slide from '../Slide';
 import Button from '../Button';
 import './ImageSlider.scss';
 
 
-const imageCount = 15;
+const imageCount = 10;
 const imageArr = [];
 
 for (let index = 0; index < imageCount; index += 1) {
@@ -24,6 +24,9 @@ for (let index = 0; index < imageCount; index += 1) {
 const MotionSlide = motion.custom(Slide);
 
 const slideVariants = {
+  hidden: {
+    opacity: 0,
+  },
   past: {
     x: '-200%',
   },

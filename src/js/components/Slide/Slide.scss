@@ -2,28 +2,19 @@
   width: 100%;
   margin-right: 40px;
   position: absolute;
-  transition: transform 1s ease-out;
   width: 1000px;
   will-change: transform;
+  transform: translateX(-200%);
 
   img {
     display: block;
   }
 
-  &.current {
+  &:first-of-type {
     transform: translateX(0);
   }
 
-  &.past {
-    transform: translateX(-200%);
+  &:nth-child(2) {
+    transform: translateX(100%);
   }
-
-  &.next {
-    transform: translateX(110%);
-  }
-
-  &.future {
-    transform: translateX(200%);
-  }
-
 }
