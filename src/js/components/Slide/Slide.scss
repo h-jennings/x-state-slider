@@ -1,0 +1,29 @@
+.c-Slide {
+  width: 100%;
+  margin-right: 40px;
+  position: absolute;
+  transition: transform 1s ease-out;
+  width: 1000px;
+  will-change: transform;
+
+  img {
+    display: block;
+  }
+
+  &.current {
+    transform: translateX(0);
+  }
+
+  &.past {
+    transform: translateX(-200%);
+  }
+
+  &.next {
+    transform: translateX(110%);
+  }
+
+  &.future {
+    transform: translateX(200%);
+  }
+
+}

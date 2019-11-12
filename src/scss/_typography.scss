@@ -1,0 +1,124 @@
+@font-face {
+  font-family: 'Anodina';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/anodina-regular-webfont.woff2") format("woff2"),
+    url("../assets/fonts/anodina-regular-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Anodina';
+  font-style: normal;
+  font-weight: 900;
+  src: url("../assets/fonts/anodina-extrabold-webfont.woff2") format("woff2"),
+    url("../assets/fonts/anodina-extrabold-webfont.woff") format("woff");
+}
+
+// Type Scale
+:root {
+  --scale: 1.333;
+  --txt-base: 20px;
+  --txt-xxsm: 11px;
+  --txt-xsm: 15px;
+  --txt-sm: 27px;
+  --txt-md: 35px;
+  --txt-lg: 47px;
+  --txt-xl: 63px;
+  --txt-xxl: 83px;
+  --txt-super: 111px;
+}
+
+// * Helper Classes
+// Font families
+.font-primary {
+  font-family: var(--primary-font);
+}
+
+//Font sizes
+.txt-base {
+  font-size: var(--txt-base);
+}
+
+.txt-xxsm {
+  font-size: var(--txt-xxsm);
+}
+
+.txt-xsm {
+  font-size: var(--txt-xsm);
+}
+
+.txt-sm {
+  font-size: var(--txt-sm);
+}
+
+.txt-md {
+  font-size: var(--txt-md);
+}
+
+.txt-lg {
+  font-size: var(--txt-lg);
+}
+
+.txt-xl {
+  font-size: var(--txt-xl);
+}
+
+.txt-xxl {
+  font-size: var(--txt-xxl);
+}
+
+.txt-super {
+  font-size: var(--txt-super);
+}
+
+// Line-height helpers
+.lh--1 {
+  line-height: 1;
+}
+
+.lh--1-2 {
+  line-height: 1.2;
+}
+
+.lh--1-33 {
+  line-height: 1.33;
+}
+
+.lh--1-5 {
+  line-height: 1.5;
+}
+
+.lh--2 {
+  line-height: 2;
+}
+
+// Base Standard HTML Element styles
+
+html {
+  font-family: var(--primary-font);
+  color: var(--black);
+  font-size: var(--txt-base);
+}
+
+h1 {
+  font-family: var(--primary-font);
+  line-height: 1;
+  font-weight: 900;
+  font-size: var(--txt-md);
+}
+
+h2 {
+  font-family: var(--primary-font);
+  line-height: 1;
+  font-size: var(--txt-sm);
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+p {
+  font-size: var(--txt-xsm);
+  line-height: 1.5;
+}
